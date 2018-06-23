@@ -539,7 +539,6 @@ getprocs()					//contador de procesos
 	int contador = 0;
 	struct proc *p;
 	sti();
-	acquire(&ptable.lock);
 	for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
 	{
 		if(p -> state != UNUSED)
@@ -548,7 +547,6 @@ getprocs()					//contador de procesos
 		}
 	}	
 	cprintf("Actualmente hay %d procesos corriendo en la CPU\n", contador);
-	release(&ptable.lock);
 	return 22;
 }
 	
