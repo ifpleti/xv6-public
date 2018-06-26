@@ -532,3 +532,9 @@ procdump(void)
     cprintf("\n");
   }
 }
+int
+sys_fisdir(void)
+{
+	cprintf("hola mundo");
+	return 0;
+}
